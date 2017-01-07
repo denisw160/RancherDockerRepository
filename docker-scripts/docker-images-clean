@@ -1,0 +1,11 @@
+#!/bin/bash
+# Removing all images
+read -p "Do you remove all images? " -n 1 -r
+echo    
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	echo Removing all images...
+	docker rmi $(docker images -q)
+	echo Remove done.
+fi
+

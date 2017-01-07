@@ -1,0 +1,11 @@
+#!/bin/bash
+# Removing unused volumes
+read -p "Do you remove unused volumes? " -n 1 -r
+echo    
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	echo Removing unused volumes ...
+	docker volume rm $(docker volume ls -qf dangling=true)
+	echo Remove done.
+fi
+

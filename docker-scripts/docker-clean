@@ -1,0 +1,13 @@
+#!/bin/bash
+# Removing all conatiners
+read -p "Do you remove all containers? " -n 1 -r
+echo    
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	echo Stopping all containers ...
+	docker stop $(docker ps -a -q)
+	echo Removing all containers ...
+	docker rm -v $(docker ps -a -q)
+	echo Remove done.
+fi
+
