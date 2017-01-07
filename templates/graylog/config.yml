@@ -1,0 +1,7 @@
+name: Graylog
+description: |
+  Graylog for Rancher
+version: v2.1.0-3
+category: Applications
+maintainer: Denis Wirries (denis@wirries.me)
+

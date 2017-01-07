@@ -1,0 +1,28 @@
+version: '2'
+catalog:
+  name: Graylog
+  version: 2.1.0-3
+  description: Graylog for Rancher
+  questions:
+    - variable: GRAYLOG_WEB_ENDPOINT_URI
+      description: "Server for accessing to graylog, format: http://[server]:[port]/api."
+      label: "Endpoint URI"
+      type: "string"
+      required: true
+      default: "http://[server]:[port]/api"
+services:
+  mongo:
+    scale: 1
+  elasticsearch:
+    scale: 1
+  graylog:
+    scale: 1
+    health_check:
+      healthy_threshold: 2
+      response_timeout: 2000
+      port: 9000
+      unhealthy_threshold: 3
+      initializing_timeout: 60000
+      interval: 2000
+      strategy: none
+      reinitializing_timeout: 60000
