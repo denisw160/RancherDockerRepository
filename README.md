@@ -5,6 +5,60 @@ A Repository for Docker and Rancher Tests
 
 # Installing Docker on Ubuntu Server 16.04
 
+A few steps for installing docker on Ubuntu.
+
+```
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install apt-transport-https ca-certificates mc htop iftop screen
+
+$ sudo apt-key adv \
+               --keyserver hkp://ha.pool.sks-keyservers.net:80 \
+               --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+
+$ echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | sudo tee /etc/apt/sources.list.d/docker.list
+
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt-cache policy docker-engine
+$ sudo apt install linux-image-extra-$(uname -r) linux-image-extra-virtual
+$ sudo apt-get autoremove 
+
+$ sudo apt install docker-engine
+$ sudo service docker start
+
+$ sudo docker run hello-world
+
+$ sudo usermod -aG docker [user for docker]
+```
+
+## Adding Docker Compose
+
+```
+$ sudo curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/1.8.1/docker-compose-$(uname -s)-$(uname -m)"
+$ sudo chmod +x /usr/local/bin/docker-compose
+$ docker-compose -v
+```
+
+# Management Tools
+
+## Standalone 
+
+Using Web-UI for manage docker: http://portainer.io/install.html
+
+```
+$ sudo docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
+```
+
+## Rancher
+
+Enterprise tool for Docker: http://rancher.io/
+
+```
+$ sudo docker run -d --restart=unless-stopped -p 8080:8080 --name rancher-server rancher/server
+```
+
+For more install option see http://docs.rancher.com/rancher/v1.2/en/installing-rancher/installing-server/#single-container
 
 # Rancher Catalog
 
