@@ -3,6 +3,8 @@ Repository for Docker and Rancher
 
 A Repository for Docker and Rancher Tests
 
+# Installing Docker on Ubuntu Server 16.04
+
 
 # Rancher Catalog
 
@@ -21,6 +23,7 @@ The templates for the catalog found in the folders:
 
 ## Sample structure 
 
+```
 -- templates (Or any of templates folder)
   |-- app
   |   |-- 0
@@ -32,5 +35,6 @@ The templates for the catalog found in the folders:
   |   |-- catalogIcon-app.svg
   |   |-- config.yml
 ...
+```
 
 More on http://docs.rancher.com/rancher/v1.3/en/catalog/private-catalog/
