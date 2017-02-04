@@ -3,17 +3,17 @@ Docker-MySql-Demo
 
 This creates a docker container with custom configuration for MySql 5.7.
 
-** Build the container **
+**Build the container**
 ```
 	$ make
 ```
 
-** Push the container ** 
+**Push the container** 
 ```
 	$ make push
 ```
 	
-** Run the container **
+**Run the container**
 Run the container locally. The MySql-Root password is: password
 ```
 	$ make run 
@@ -21,7 +21,7 @@ Run the container locally. The MySql-Root password is: password
 	$ make start
 ```
 
-** Customize Container **
+**Customize Container**
 With these docker parameters, you can setup the user and passwords.
 ```
 	MYSQL_ROOT_PASSWORD=your-root-password
