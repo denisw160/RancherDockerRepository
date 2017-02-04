@@ -59,7 +59,7 @@
       apt:
         name: docker-engine
         state: present
-    
+
     - name: Starting docker
       service:
         name: docker 
@@ -73,3 +73,10 @@
         name: sysadm
         append: yes
         groups: docker
+
+    - name: restart machine
+      shell: sleep 2 && shutdown -r now "Ansible restart after install triggered"
+      async: 1
+      poll: 0
+      ignore_errors: true
+
