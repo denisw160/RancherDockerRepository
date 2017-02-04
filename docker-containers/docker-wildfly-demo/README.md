@@ -1,4 +1,4 @@
-Docker-Logging-Demo
+Docker-Wildfly-Demo
 ======
 
 This creates a docker container with a wildfly application server.
