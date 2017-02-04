@@ -20,7 +20,7 @@ Installation of cpu_show for C programmer.
 
 **Step 2**: Download Cpu_show.tar.gz to /opt and extract it
 ```
-	$ $ cd /opt
+	$ cd /opt
 	$ wget https://www.sunfounder.com/wiki/images/5/5b/Cpu_show.tar.gz
 	$ tar xvf Cpu_show.tar.gz
 	$ rm Cpu_show.tar.gz
