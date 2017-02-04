@@ -10,7 +10,7 @@ More on: http://www.sunfounder.com/wiki/index.php?title=Raspberry_Pi_5110_Mini_L
 
 Installation of cpu_show for C programmer.
 
-*Step 1*: Install wiringPi
+**Step 1**: Install wiringPi
 ```
 	$ cd /opt
 	$ git clone git://git.drogon.net/wiringPi
@@ -18,7 +18,7 @@ Installation of cpu_show for C programmer.
 	$ ./build
 ```
 
-*Step 2*: Download Cpu_show.tar.gz to /opt and extract it
+**Step 2**: Download Cpu_show.tar.gz to /opt and extract it
 ```
 	$ $ cd /opt
 	$ wget https://www.sunfounder.com/wiki/images/5/5b/Cpu_show.tar.gz
@@ -26,13 +26,13 @@ Installation of cpu_show for C programmer.
 	$ rm Cpu_show.tar.gz
 ```
 	
-*Step 3*: Compile files
+**Step 3**: Compile files
 ```
 	$ cd /opt/cpu_show
 	$ ./compile.sh
 ```
 
-*Step 4*: Install init script
+**Step 4**: Install init script
 ```
 	$ cd /etc/init.d
 	$ wget https://raw.githubusercontent.com/denisw160/RancherDockerRepository/master/other/raspberry-pi-5110-mini-lcd/cpu_show
