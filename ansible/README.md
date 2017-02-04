@@ -44,7 +44,7 @@ Test and setup the nodes with ansible requirements (see python).
 This playbook upgrades all servers and restarted the servers.
 
 ```
-	$ ansible-playbook [-u remote-user] --ask-become-pass upgrade-restart.yml
+	$ ansible-playbook [-u remote-user] --extra-vars "hosts=group" --ask-become-pass upgrade-restart.yml
 ```
 
 ## Shutdown servers
