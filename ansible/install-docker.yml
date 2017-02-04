@@ -1,0 +1,75 @@
+---
+# This playbook install docker on all docker servers
+- hosts: dockers
+  become: yes
+  become_user: root
+  become_method: sudo
+  tasks:
+    - name: Updating system
+      apt: 
+        update_cache: yes
+        upgrade: dist
+
+    - name: Install apt-transport-https
+      apt:
+        name: apt-transport-https
+        state: present
+    - name: Install ca-certificates
+      apt:
+        name: ca-certificates
+        state: present
+    - name: Install mc 
+      apt:
+        name: mc 
+        state: present
+    - name: Install htop 
+      apt:
+        name: htop 
+        state: present
+    - name: Install iftop 
+      apt:
+        name: iftop 
+        state: present
+    - name: Install screen
+      apt:
+        name: screen
+        state: present
+
+    - name: Adding apt-key
+      command: apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+    - name: Adding repository for docker
+      action: shell echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" > /etc/apt/sources.list.d/docker.list
+
+    - name: Updating system
+      apt: 
+        update_cache: yes
+        upgrade: dist
+
+    - name: Install linux-image-extra
+      action: shell apt-get install -y linux-image-extra-$(uname -r)
+    - name: Install linux-image-extra-virtual
+      apt:
+        name: linux-image-extra-virtual
+        state: present
+
+    - name: clean up system
+      command: apt-get autoremove -y
+
+    - name: Install docker-engine
+      apt:
+        name: docker-engine
+        state: present
+    
+    - name: Starting docker
+      service:
+        name: docker 
+        state: started
+
+    - name: Testing docker 
+      command: docker run hello-world
+
+    - name: Adding user to docker 
+      user:
+        name: sysadm
+        append: yes
+        groups: docker
