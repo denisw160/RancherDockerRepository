@@ -33,9 +33,9 @@ In my case I have two host groups "dockers" (nodes for dockers) and "rpnodes" (n
 Test and setup the nodes with ansible requirements (see python).
 
 ```
-	$ ansible dockers -m raw -a "echo hello"
-	$ ansible dockers --become --become-user=root --ask-become-pass -m raw -a "apt install -y python-simplejson"
-	$ ansible all -m ping
+	$ ansible dockers [-u remote-user] -m raw -a "echo hello"
+	$ ansible dockers [-u remote-user] --become --become-user=root --ask-become-pass -m raw -a "apt install -y python-simplejson"
+	$ ansible dockers [-u remote-user] -m ping
 ```
 
 # Playbook examples
