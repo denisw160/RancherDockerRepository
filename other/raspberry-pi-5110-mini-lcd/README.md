@@ -37,5 +37,7 @@ Installation of cpu_show for C programmer.
 	$ cd /etc/init.d
 	$ wget https://raw.githubusercontent.com/denisw160/RancherDockerRepository/master/other/raspberry-pi-5110-mini-lcd/cpu_show
 	$ chmod 755 cpu_show
-	$ [Add cpu_show as service]
+	$ [Add cpu_show as service, e.g.
+	$ update-rc.d cpu_show defaults
+	$ update-rc.d cpu_show enable]
 ```	
