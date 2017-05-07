@@ -2,7 +2,7 @@ version: '2'
 catalog:
   name: Registry
   version: 2
-  description: Official Docker Registry (see more on: https://docs.docker.com/registry/)
+  description: Official Docker Registry (see more on docs.docker.com/registry/)
 services:
   registry:
     scale: 1
