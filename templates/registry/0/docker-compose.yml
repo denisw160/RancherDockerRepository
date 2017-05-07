@@ -1,0 +1,20 @@
+version: '2'
+volumes:
+  registry-data:
+    external: true
+    driver: 'null'
+services:
+  registry:
+    image: registry:2
+    volumes:
+    - registry-data:/var/lib/registry
+    tty: true
+    logging:
+      driver: syslog
+      tag: registry
+    ports:
+    - 5000:5000/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
+      

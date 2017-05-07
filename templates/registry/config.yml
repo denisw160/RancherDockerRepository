@@ -1,0 +1,7 @@
+name: Registry
+description: |
+  Official Docker Registry (see more on: https://docs.docker.com/registry/)
+version: v2
+category: Applications
+maintainer: Denis Wirries (denis@wirries.me)
+
