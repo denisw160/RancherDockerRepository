@@ -11,7 +11,8 @@ services:
     tty: true
     logging:
       driver: syslog
-      tag: registry
+      options:
+        tag: registry
     ports:
     - 5000:5000/tcp
     labels:
