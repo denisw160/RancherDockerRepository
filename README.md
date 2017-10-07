@@ -92,3 +92,30 @@ The templates for the catalog found in the folders:
 ```
 
 More on http://docs.rancher.com/rancher/v1.3/en/catalog/private-catalog/
+
+# Useful commands for Docker and Ansible
+
+## Install docker
+
+```
+  $ ansible-playbook [-u remote-user] --ask-become-pass install-docker.yml
+```
+
+
+## Show runing containers
+
+```
+  $ ansible dockers -a "docker ps"
+```
+
+## Adding cleanup for docker
+
+```
+  $ ansible dockers -a "docker run -v /var/run/docker.sock:/var/run/docker.sock:rw -v /var/lib/docker:/var/lib/docker:rw --name docker-cleanup meltwater/docker-cleanup:latest"
+```
+
+## Install Rancher Client
+
+```
+  $ ansible dockers -a "docker run -d --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/rancher:/var/lib/rancher rancher/agent:v1.1.0 {rancher-server-url}"
+```
