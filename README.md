@@ -114,6 +114,13 @@ More on http://docs.rancher.com/rancher/v1.3/en/catalog/private-catalog/
   $ ansible dockers -a "docker run -v /var/run/docker.sock:/var/run/docker.sock:rw -v /var/lib/docker:/var/lib/docker:rw --name docker-cleanup meltwater/docker-cleanup:latest"
 ```
 
+## Adding automatic update for docker containers
+
+```
+  $ ansible dockers -a "docker run -d -v /var/run/docker.sock:/var/run/docker.sock --name watchtower v2tec/watchtower:latest"
+```
+
+
 ## Install Rancher Client
 
 ```
